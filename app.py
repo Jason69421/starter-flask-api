@@ -10,10 +10,10 @@ value = 0
 # Define the function you want to run continuously
 def my_method():
     global value
-    os.system("yt-dlp")
-    #while True:
-        #time.sleep(1)
-        #value += 1
+    #os.system("yt-dlp")
+    while True:
+        time.sleep(1)
+        value += 1
         
 
 # Create a thread to run the method
