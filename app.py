@@ -3,16 +3,21 @@ import os
 import threading
 import time
 import subprocess
+import yt_dlp
 
 app = Flask(__name__)
+ydl = yt_dlp.YoutubeDL()
 
 value = ""
 
 # Define the function you want to run continuously
 def my_method():
     global value
-    result = subprocess.check_output(["yt-dlp", "https://www.youtube.com/watch?v=eJmtVr5vptI"], text=True, stderr=subprocess.STDOUT)
-    value = result
+    video_url = 'https://www.youtube.com/watch?v=eJmtVr5vptI'
+    with ydl:
+        video_info = ydl.extract_info(video_url, download=False)
+    #result = subprocess.check_output(["yt-dlp", "https://www.youtube.com/watch?v=eJmtVr5vptI"], text=True, stderr=subprocess.STDOUT)
+    value = video_info['title']
     #threading.Timer(1, my_method).start()
 
         
