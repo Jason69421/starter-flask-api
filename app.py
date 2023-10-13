@@ -75,7 +75,7 @@ def write():
     with ydl:
           ydl.download(video_url)
 
-    for file in os.listdit('/tmp'):
+    for file in os.listdir('/tmp'):
         g_a.upload(file=file,folderId="841555b9-9cda-4871-864b-be3c0149112e")
     return "test"
 
