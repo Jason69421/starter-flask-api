@@ -50,7 +50,7 @@ def start_thread():
 @app.route('/')
 def home():
     r = requests.get(url, headers=headers)
-    return r
+    return r.text
     #return 'Home Page Route: ' + str(value)
 
 if __name__ == '__main__':
