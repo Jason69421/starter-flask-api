@@ -33,7 +33,8 @@ output_dir = "/tmp/%(title)s.%(ext)s"
     
 options = {
     'format': 'best',
-    'outtmpl': output_dir
+    'outtmpl': output_dir,
+    'quiet': True
 }
 
 ydl = yt_dlp.YoutubeDL(options)
@@ -71,11 +72,8 @@ def start_thread():
 
 @app.route('/test')
 def write():
-    #upload_thread = threading.Thread(target=uploader)
-
-    # Start the thread
-    #upload_thread.start()
-    return "test"
+    result = ydl.extract_info("https://www.tiktok.com/@20mj._._/live", download=False)
+    return result
 
 @app.route('/')
 def home():
