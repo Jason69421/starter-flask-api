@@ -2,17 +2,18 @@ from flask import Flask
 import os
 import threading
 import time
+import subprocess
 
 app = Flask(__name__)
 
-value = 0
+value = ""
 
 # Define the function you want to run continuously
 def my_method():
     global value
-    os.system("yt-dlp")
-    value += 1
-    threading.Timer(1, my_method).start()
+    result = subprocess.check_output(["yt-dlp", "https://www.youtube.com/watch?v=eJmtVr5vptI"], text=True, stderr=subprocess.STDOUT)
+    value = result
+    #threading.Timer(1, my_method).start()
 
         
 
