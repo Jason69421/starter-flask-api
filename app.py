@@ -60,7 +60,7 @@ def start_thread():
 
 
 def uploader():
-    while true:
+    while True:
         video_url = 'https://www.youtube.com/watch?v=kK-iR6g-V1g'
     
         with ydl:
