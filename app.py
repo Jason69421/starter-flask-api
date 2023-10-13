@@ -59,6 +59,7 @@ def uploader():
 # Start the thread when the Flask app starts
 @app.before_first_request
 def start_thread():
+    print("hi")
     #thread = threading.Thread(target=uploader)
     #thread.start()
 
