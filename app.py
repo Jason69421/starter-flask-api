@@ -59,6 +59,14 @@ def start_thread():
 
 @app.route('/test')
 def write():
+    content = "hi"
+
+    # Specify the file path
+    file_path = "/tmp/test.txt"
+    
+    # Open the file in write mode and write the content
+    with open(file_path, 'w') as file:
+        file.write(content)
     return "test"
 
 @app.route('/')
