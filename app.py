@@ -62,16 +62,15 @@ def home():
 
     
     video_url = 'https://www.youtube.com/shorts/SyKF198WZB0'
-    
+    """
     with ydl:
-          ydl.download(video_url)
+          ydl.download(video_url)"""
 
     
-    #r = requests.get(url, headers=headers)
-    #json_data = r.json()  # Parse the JSON response
-    #return jsonify(json_data)
-    #return r.text
-    #return 'Home Page Route: ' + str(value)
+    r = requests.get(url, headers=headers)
+    json_data = r.json()  # Parse the JSON response
+    return jsonify(json_data)
+
 
 if __name__ == '__main__':
     app.run()
