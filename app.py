@@ -57,6 +57,10 @@ def start_thread():
     my_method()
     #thread.start()
 
+@app.route('/test')
+def write():
+    return "test"
+
 @app.route('/')
 def home():
 
