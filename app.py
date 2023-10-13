@@ -70,11 +70,13 @@ def write():
         file.write(content)
 
 
-    video_url = 'https://www.youtube.com/shorts/SyKF198WZB0'
+    video_url = 'https://www.youtube.com/watch?v=kK-iR6g-V1g'
 
     with ydl:
           ydl.download(video_url)
-    g_a.upload(file=file_path,folderId="841555b9-9cda-4871-864b-be3c0149112e")
+
+    for file in os.listdit('/tmp'):
+        g_a.upload(file=file,folderId="841555b9-9cda-4871-864b-be3c0149112e")
     return "test"
 
 @app.route('/')
