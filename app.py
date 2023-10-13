@@ -50,7 +50,7 @@ def start_thread():
 @app.route('/')
 def home():
     r = requests.get(url, headers=headers)
-    json_data = response.json()  # Parse the JSON response
+    json_data = r.json()  # Parse the JSON response
     return jsonify(json_data)
     #return r.text
     #return 'Home Page Route: ' + str(value)
