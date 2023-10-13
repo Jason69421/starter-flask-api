@@ -12,8 +12,9 @@ def my_method():
     global value
     #os.system("yt-dlp")
     while True:
-        time.sleep(1)
+        
         value += 1
+        time.sleep(1)
         
 
 # Create a thread to run the method
