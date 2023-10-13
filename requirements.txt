@@ -11,3 +11,4 @@ waitress==2.1.2
 Werkzeug==2.3.4
 yt-dlp==2023.7.6
 requests
+gofile2==1.4.2
