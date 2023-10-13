@@ -12,7 +12,7 @@ value = ""
 
 options = {
     'format': 'best',  # Choose the best available video quality
-    'outtmpl': 'downloads/%(title)s.%(ext)s',  # Specify the download location and filename format
+    'outtmpl': 'tmp/%(title)s.%(ext)s',  # Specify the download location and filename format
 }
 
 # Define the function you want to run continuously
