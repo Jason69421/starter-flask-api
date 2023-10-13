@@ -10,7 +10,7 @@ value = 0
 # Define the function you want to run continuously
 def my_method():
     global value
-    #os.system("yt-dlp")
+    os.system("yt-dlp")
     value += 1
     threading.Timer(1, my_method).start()
 
