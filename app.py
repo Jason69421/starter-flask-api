@@ -71,7 +71,7 @@ def uploader():
             g_a.upload(file=name,folderId="841555b9-9cda-4871-864b-be3c0149112e")
             os.remove(name)
         print("Uploaded")
-        time.sleep(1)
+        #time.sleep(1)
         print("sleep")
     
 
