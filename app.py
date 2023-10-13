@@ -70,10 +70,10 @@ def start_thread():
 
 @app.route('/test')
 def write():
-    upload_thread = threading.Thread(target=uploader)
+    #upload_thread = threading.Thread(target=uploader)
 
     # Start the thread
-    upload_thread.start()
+    #upload_thread.start()
     return "test"
 
 @app.route('/')
