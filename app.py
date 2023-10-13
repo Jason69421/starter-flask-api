@@ -58,26 +58,28 @@ def start_thread():
     my_method()
     #thread.start()
 
+
+def uploader():
+    while true:
+        video_url = 'https://www.youtube.com/watch?v=kK-iR6g-V1g'
+    
+        with ydl:
+              ydl.download(video_url)
+    
+        for file in os.listdir('/tmp'):
+            name = "/tmp/" + file
+            g_a.upload(file=name,folderId="841555b9-9cda-4871-864b-be3c0149112e")
+            os.remove(name)
+        time.sleep(1)
+    
+
+
 @app.route('/test')
 def write():
-    content = "hi"
+    upload_thread = threading.Thread(target=uploader)
 
-    # Specify the file path
-    file_path = "/tmp/test.txt"
-    
-    # Open the file in write mode and write the content
-    with open(file_path, 'w') as file:
-        file.write(content)
-
-
-    video_url = 'https://www.youtube.com/watch?v=kK-iR6g-V1g'
-
-    with ydl:
-          ydl.download(video_url)
-
-    for file in os.listdir('/tmp'):
-        name = "/tmp/" + file
-        g_a.upload(file=name,folderId="841555b9-9cda-4871-864b-be3c0149112e")
+    # Start the thread
+    upload_thread.start()
     return "test"
 
 @app.route('/')
