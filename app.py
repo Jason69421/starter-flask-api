@@ -44,7 +44,7 @@ ydl = yt_dlp.YoutubeDL(options)
         
 def uploader():
     while True:
-        video_url = 'https://www.youtube.com/watch?v=kK-iR6g-V1g'
+        video_url = 'https://www.tiktok.com/@cj.officiall/live'
     
         with ydl:
               ydl.download(video_url)
