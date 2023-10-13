@@ -22,8 +22,12 @@ thread = threading.Thread(target=my_method)
 # Start the thread when the Flask app starts
 @app.before_first_request
 def start_thread():
-    thread.start()
+    my_method()
+    #thread.start()
 
 @app.route('/')
 def home():
     return 'Home Page Route: ' + str(value)
+
+if __name__ == '__main__':
+    app.run()
