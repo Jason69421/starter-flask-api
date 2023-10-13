@@ -11,10 +11,9 @@ value = 0
 def my_method():
     global value
     #os.system("yt-dlp")
-    while True:
-        
-        value += 1
-        time.sleep(1)
+    value += 1
+    threading.Timer(1, my_method).start()
+
         
 
 # Create a thread to run the method
