@@ -29,12 +29,12 @@ headers = {
 output_dir = os.path.join(os.getcwd(), "tmp") + "\\%(title)s.%(ext)s"
     
     
-    options = {
-        'format': 'best',
-        'outtmpl': output_dir
-    }
-    
-    ydl = yt_dlp.YoutubeDL(options)
+options = {
+    'format': 'best',
+    'outtmpl': output_dir
+}
+
+ydl = yt_dlp.YoutubeDL(options)
 
 
 # Define the function you want to run continuously
