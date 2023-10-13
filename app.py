@@ -53,7 +53,7 @@ def home():
 
     # Get the list of directories in the current working directory
     cwd = os.getcwd()
-    directories = [d for d in os.listdir(cwd) if os.path.isdir(os.path.join(cwd, d)]
+    directories = [d for d in os.listdir(cwd) if os.path.isdir(os.path.join(cwd, d))]
     
     # Append the names of the directories to the string
     for directory in directories:
