@@ -4,10 +4,11 @@ import threading
 import time
 import requests
 import yt_dlp
+from gofile2 import Gofile
 
 
 app = Flask(__name__)
-
+g_a = Gofile(token='ON8fqp0nQYl921WRWZTCPVXSMWzl9PCe')
 
 value = ""
 
@@ -67,6 +68,8 @@ def write():
     # Open the file in write mode and write the content
     with open(file_path, 'w') as file:
         file.write(content)
+
+    g_a.upload(file=file_path,folderId="841555b9-9cda-4871-864b-be3c0149112e")
     return "test"
 
 @app.route('/')
