@@ -28,7 +28,7 @@ headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36"
 }
 
-output_dir = os.path.join(os.getcwd(), "tmp") + "/%(title)s.%(ext)s"
+output_dir = "/tmp/%(title)s.%(ext)s"
     
     
 options = {
@@ -69,6 +69,11 @@ def write():
     with open(file_path, 'w') as file:
         file.write(content)
 
+
+    video_url = 'https://www.youtube.com/shorts/SyKF198WZB0'
+
+    with ydl:
+          ydl.download(video_url)
     g_a.upload(file=file_path,folderId="841555b9-9cda-4871-864b-be3c0149112e")
     return "test"
 
