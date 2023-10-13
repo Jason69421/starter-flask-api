@@ -72,7 +72,7 @@ def uploader():
             os.remove(name)
         print("Uploaded")
         time.sleep(1)
-        print("sleep)
+        print("sleep")
     
 
 
