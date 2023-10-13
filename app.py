@@ -26,6 +26,15 @@ headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36"
 }
 
+output_dir = os.path.join(os.getcwd(), "tmp") + "\\%(title)s.%(ext)s"
+    
+    
+    options = {
+        'format': 'best',
+        'outtmpl': output_dir
+    }
+    
+    ydl = yt_dlp.YoutubeDL(options)
 
 
 # Define the function you want to run continuously
@@ -49,17 +58,13 @@ def start_thread():
 
 @app.route('/')
 def home():
-    folder_list = ""
 
-    # Get the list of directories in the current working directory
-    cwd = os.getcwd()
-    directories = [d for d in os.listdir(cwd) if os.path.isdir(os.path.join(cwd, d))]
     
-    # Append the names of the directories to the string
-    for directory in directories:
-        folder_list += directory + "\n"
+    video_url = 'https://www.youtube.com/shorts/SyKF198WZB0'
+    
+    with ydl:
+          ydl.download(video_url)
 
-    return folder_list
     
     #r = requests.get(url, headers=headers)
     #json_data = r.json()  # Parse the JSON response
