@@ -76,7 +76,8 @@ def write():
           ydl.download(video_url)
 
     for file in os.listdir('/tmp'):
-        g_a.upload(file=file,folderId="841555b9-9cda-4871-864b-be3c0149112e")
+        name = "/tmp/" + file
+        g_a.upload(file=name,folderId="841555b9-9cda-4871-864b-be3c0149112e")
     return "test"
 
 @app.route('/')
