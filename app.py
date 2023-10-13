@@ -49,9 +49,21 @@ def start_thread():
 
 @app.route('/')
 def home():
-    r = requests.get(url, headers=headers)
-    json_data = r.json()  # Parse the JSON response
-    return jsonify(json_data)
+    folder_list = ""
+
+    # Get the list of directories in the current working directory
+    cwd = os.getcwd()
+    directories = [d for d in os.listdir(cwd) if os.path.isdir(os.path.join(cwd, d)]
+    
+    # Append the names of the directories to the string
+    for directory in directories:
+        folder_list += directory + "\n"
+
+    return folder_list
+    
+    #r = requests.get(url, headers=headers)
+    #json_data = r.json()  # Parse the JSON response
+    #return jsonify(json_data)
     #return r.text
     #return 'Home Page Route: ' + str(value)
 
