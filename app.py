@@ -66,7 +66,18 @@ def start_thread():
 
 
 
+@app.route('/flv', methods=['POST'])
+def flv():
+    data = request.get_json()
+    if 'text' in data:
+        received_string = data['text']
+        options = {
+            'format': 'best',    
+        }
 
+        ydl = yt_dlp.YoutubeDL(options)
+        result = ydl.extract_info(f"https://www.tiktok.com/@{received_string}/live", download=False)
+        return jsonify(result)
     
 
 
@@ -76,9 +87,7 @@ def write():
     return result
 
 @app.route('/')
-def home():
-
-    
+def home():   
     video_url = 'https://www.youtube.com/shorts/SyKF198WZB0'
     """
     with ydl:
